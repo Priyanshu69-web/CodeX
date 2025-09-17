@@ -1,12 +1,95 @@
-# React + Vite
+# CodeX
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A real-time collaborative code editor built with React and Node.js.
 
-Currently, two official plugins are available:
+## Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+CodeX is an online code editor that allows multiple developers to collaborate on code in real-time. It features a Monaco editor (the same editor used in VS Code) and supports live code synchronization across all connected users in a room.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Real-time code collaboration
+- Room-based sessions
+- Monaco editor with syntax highlighting
+- Code persistence in MongoDB
+- Responsive design with Tailwind CSS
+
+## Tech Stack
+
+### Frontend
+
+- React
+- Vite
+- Monaco Editor
+- Socket.io Client
+- Tailwind CSS
+- React Router
+
+### Backend
+
+- Node.js
+- Express
+- Socket.io
+- MongoDB with Mongoose
+
+## Installation
+
+1. Clone the repository:
+
+   ```
+   git clone <repo-url>
+   cd CodeX
+   ```
+
+2. Install backend dependencies:
+
+   ```
+   cd Backend
+   npm install
+   ```
+
+3. Install frontend dependencies:
+
+   ```
+   cd ../Frontend
+   npm install
+   ```
+
+4. Set up environment variables:
+
+   - Create a `.env` file in the Backend directory
+   - Add your MongoDB connection string: `MONGO_URI=your_mongodb_uri`
+   - Optionally, set `PORT=5000`
+
+5. For local development, update the socket URL in `Frontend/src/pages/CodeEditor.jsx`:
+   - Change `io("https://codex-backend-hsrs.onrender.com")` to `io("http://localhost:5000")`
+
+## Usage
+
+1. Start the backend server:
+
+   ```
+   cd Backend
+   npm start
+   ```
+
+2. Start the frontend development server:
+
+   ```
+   cd Frontend
+   npm run dev
+   ```
+
+3. Open your browser to `http://localhost:5173` (or the port shown by Vite)
+
+4. Click "Start Session" to create a new room
+
+5. Share the URL with others to collaborate
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the ISC License.
