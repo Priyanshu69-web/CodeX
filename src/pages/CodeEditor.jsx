@@ -39,7 +39,7 @@ function CodeEditor({ roomId }) {
                     height="100%"
                     width="100%"
                     theme="vs-dark"
-                    language="JavaScript/TypeScript"
+                    language="javascript"
                     value={code}
                     onChange={handleChange}
                     options={{ minimap: { enabled: false } }}
