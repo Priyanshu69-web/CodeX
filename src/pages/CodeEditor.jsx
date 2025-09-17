@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 import Editor from "@monaco-editor/react";
 
-const socket = io("http://localhost:5000");
+const socket = io("https://codex-backend-hsrs.onrender.com");
 
 function CodeEditor({ roomId }) {
     const [code, setCode] = useState("");
@@ -39,7 +39,7 @@ function CodeEditor({ roomId }) {
                     height="100%"
                     width="100%"
                     theme="vs-dark"
-                    language="plaintext"
+                    language="JavaScript/TypeScript"
                     value={code}
                     onChange={handleChange}
                     options={{ minimap: { enabled: false } }}
